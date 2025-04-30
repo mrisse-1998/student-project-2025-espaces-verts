@@ -1,22 +1,27 @@
 ---
-title: Example Map
+title: Example Map with Leaflet
 toc: false
 ---
-# Example Map
+# Example Map with Leaflet
+
 ```js
 const div = display(document.createElement("div"));
 div.style = "height: 400px;";
 
 const map = L.map(div)
-  .setView([51.505, -0.09], 13);
+  .setView([46.519653, 6.632273], 13);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 })
   .addTo(map);
 
-L.marker([51.5, -0.09])
+L.marker([46.519653, 6.632273])
   .addTo(map)
-  .bindPopup("A nice popup<br> indicating a point of interest.")
+  .bindPopup("Lausanne")
   .openPopup();
 ```
+
+## Documentation
+- Leaflet documentation:<br />https://leafletjs.com/reference.html
+- Observable Framework documentation:<br />https://observablehq.com/framework/lib/leaflet
