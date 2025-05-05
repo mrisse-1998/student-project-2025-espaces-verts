@@ -6,6 +6,13 @@ toc: false
 ```js
 // Explicit import of leaflet to avoid issues with the Leaflet.heat plugin
 import L from "npm:leaflet";
+```
+
+```js
+// Wait for L to be defined before importing the Leaflet.heat plugin
+// This is necessary because Leaflet.heat depends on the L variable being defined
+if (L === undefined) console.error("L is undefined");
+
 // Leaflet.heat: https://github.com/Leaflet/Leaflet.heat/
 import "./plugins/leaflet-heat.js";
 ```
